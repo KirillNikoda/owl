@@ -12,7 +12,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js', '**/webpack/*.js', '.next'],
+  ignorePatterns: ['.eslintrc.js', '**/webpack/*.js', '.next', 'next.config.js'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
