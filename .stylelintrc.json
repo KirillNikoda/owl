@@ -5,5 +5,5 @@
     "indentation": ["tab"],
     "color-hex-case": "upper"
   },
-  "ignoreFiles": [".eslintrc.js", "**/*.tsx", "**/*.ts", "**/*.js"]
+  "ignoreFiles": [".eslintrc.js", ".next", "**/*.tsx", "**/*.ts", "**/*.js"]
 }
