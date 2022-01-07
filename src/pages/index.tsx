@@ -1,4 +1,4 @@
-import { Button } from 'src/modules/ud-ui';
+import { Button } from '@modules/ud-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
@@ -14,8 +14,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <Button appearance='primary'>primary</Button>
-        <Button appearance='ghost'>ghost</Button>
-        <Button appearance='ghost'>button</Button>
+        <Button appearance='ghost' arrow='right'>
+          button
+        </Button>
       </main>
 
       <footer className={styles.footer}>

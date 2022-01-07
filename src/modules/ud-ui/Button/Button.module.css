@@ -36,3 +36,23 @@
 	color: var(--white);
 	background-color: var(--primary);
 }
+
+.arrow {
+	display: inline-block;
+
+	margin-left: 10px;
+}
+
+.ghost svg {
+	fill: #3B434E;
+}
+
+.primary svg,
+.ghost:hover svg {
+	fill: var(--white);
+}
+
+.down {
+	transition: all 0.2s;
+	transform: rotate(90deg);
+}
