@@ -1,5 +1,4 @@
-import { Button } from '@modules/ud-ui';
-import Text from '@modules/ud-ui/Text';
+import { Tag } from '@modules/ud-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
@@ -14,13 +13,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Button appearance='primary'>primary</Button>
-        <Button appearance='ghost' arrow='right'>
-          button
-        </Button>
-        <Text size='s' onClick={() => console.log(123)}>
-          test
-        </Text>
+        <Tag color='primary' size='m' href='https://google.com'>
+          tag
+        </Tag>
       </main>
 
       <footer className={styles.footer}>
