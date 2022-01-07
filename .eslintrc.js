@@ -6,7 +6,11 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: ['plugin:@typescript-eslint/recommended', 'next/core-web-vitals'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'next/core-web-vitals',
+  ],
   root: true,
   env: {
     node: true,

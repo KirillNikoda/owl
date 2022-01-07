@@ -16,25 +16,23 @@ const Button = ({
   children,
   className,
   ...restProps
-}: Props) => {
-  return (
-    <button
-      className={classNames(styles.button, className, {
-        [styles.primary]: appearance === 'primary',
-        [styles.ghost]: appearance === 'ghost',
-      })}
-      {...restProps}>
-      {children}
-      {arrow !== 'none' && (
-        <span
-          className={classNames(styles.arrow, {
-            [styles.down]: arrow === 'down',
-          })}>
-          <ArrowIcon />
-        </span>
-      )}
-    </button>
-  );
-};
+}: Props) => (
+  <button
+    className={classNames(styles.button, className, {
+      [styles.primary]: appearance === 'primary',
+      [styles.ghost]: appearance === 'ghost',
+    })}
+    {...restProps}>
+    {children}
+    {arrow !== 'none' && (
+      <span
+        className={classNames(styles.arrow, {
+          [styles.down]: arrow === 'down',
+        })}>
+        <ArrowIcon />
+      </span>
+    )}
+  </button>
+);
 
 export default Button;

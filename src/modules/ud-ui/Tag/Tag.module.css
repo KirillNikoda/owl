@@ -4,6 +4,8 @@
 	box-sizing: border-box;
 	margin-right: 5px;
 
+	user-select: none;
+
 	border-radius: 5px;
 }
 

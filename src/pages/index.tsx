@@ -1,4 +1,4 @@
-import { Tag } from '@modules/ud-ui';
+import { Rating, Tag } from '@modules/ud-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
@@ -16,6 +16,7 @@ export default function Home() {
         <Tag color='primary' size='m' href='https://google.com'>
           tag
         </Tag>
+        <Rating rating={2} />
       </main>
 
       <footer className={styles.footer}>

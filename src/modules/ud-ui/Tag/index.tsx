@@ -20,23 +20,21 @@ const Tag = ({
   className,
   children,
   ...restProps
-}: Props) => {
-  return (
-    <div
-      className={classNames(styles.tag, className, {
-        [styles.s]: size === 's',
-        [styles.m]: size === 'm',
-        [styles.ghost]: color === 'ghost',
-        [styles.red]: color === 'red',
-        [styles.grey]: color === 'grey',
-        [styles.green]: color === 'green',
-        [styles.primary]: color === 'primary',
-        [styles.pointer]: !!href,
-      })}
-      {...restProps}>
-      {href ? <Link href={href}>{children}</Link> : children}
-    </div>
-  );
-};
+}: Props) => (
+  <div
+    className={classNames(styles.tag, className, {
+      [styles.s]: size === 's',
+      [styles.m]: size === 'm',
+      [styles.ghost]: color === 'ghost',
+      [styles.red]: color === 'red',
+      [styles.grey]: color === 'grey',
+      [styles.green]: color === 'green',
+      [styles.primary]: color === 'primary',
+      [styles.pointer]: !!href,
+    })}
+    {...restProps}>
+    {href ? <Link href={href}>{children}</Link> : children}
+  </div>
+);
 
 export default Tag;
