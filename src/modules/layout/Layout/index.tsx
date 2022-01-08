@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
+import Footer from '@modules/layout/Footer';
+import Header from '@modules/layout/Header';
+import Sidebar from '@modules/layout/Sidebar';
+
 import styles from './Layout.module.css';
 
 type Props = {
@@ -8,14 +12,12 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
-      <Header />
-      <div>
-        <Sidebar />
-        <div>{children}</div>
-      </div>
-      <Footer />
-    </>
+    <div className={styles.wrapper}>
+      <Header className={styles.header} />
+      <Sidebar className={styles.sidebar} />
+      <div>{children}</div>
+      <Footer className={styles.footer} />
+    </div>
   );
 };
 
