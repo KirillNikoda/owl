@@ -56,7 +56,7 @@ const Rating = ({
     const updatedRatingArray = ratingArray.map((r, i) => (
       <span
         key={i}
-        className={classNames(styles.star, {
+        className={classNames({
           [styles.filled]: i < currentRating,
           [styles.editable]: isEditable,
         })}
