@@ -1,12 +1,12 @@
+import { HTMLElementProps } from '@modules/core/types/prop.types';
 import classNames from 'classnames';
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import styles from './Text.module.css';
 
 type Props = {
   size?: 's' | 'l' | 'm';
   children: React.ReactNode;
-} & DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
+} & HTMLElementProps<HTMLParagraphElement>;
 
 const Text = ({ size = 'm', children, ...restProps }: Props) => {
   return (

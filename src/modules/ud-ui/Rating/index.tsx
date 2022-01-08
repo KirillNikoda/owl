@@ -1,11 +1,6 @@
+import { HTMLElementProps } from '@modules/core/types/prop.types';
 import classNames from 'classnames';
-import React, {
-  DetailedHTMLProps,
-  HTMLAttributes,
-  useEffect,
-  useState,
-  KeyboardEvent,
-} from 'react';
+import React, { useEffect, useState, KeyboardEvent } from 'react';
 
 import styles from './Rating.module.css';
 import StarIcon from './star.svg';
@@ -14,7 +9,7 @@ type Props = {
   isEditable?: boolean;
   rating: number;
   onSetRating?: (rating: number) => void;
-} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+} & HTMLElementProps<HTMLDivElement>;
 
 const Rating = ({
   rating,

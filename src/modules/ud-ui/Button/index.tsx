@@ -1,14 +1,14 @@
 import classNames from 'classnames';
-import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
 import styles from './Button.module.css';
 import ArrowIcon from './arrow.svg';
+import { HTMLElementProps } from '@modules/core/types/prop.types';
 
 type Props = {
   children: React.ReactNode;
   appearance: 'primary' | 'ghost';
   arrow?: 'right' | 'down' | 'none';
-} & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+} & HTMLElementProps<HTMLButtonElement>;
 
 const Button = ({
   appearance,

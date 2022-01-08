@@ -1,6 +1,6 @@
+import { HTMLElementProps } from '@modules/core/types/prop.types';
 import classNames from 'classnames';
 import Link from 'next/link';
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import styles from './Tag.module.css';
 
@@ -11,7 +11,7 @@ type Props = {
   color?: TagColor;
   href?: string;
   children: React.ReactNode;
-} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+} & HTMLElementProps<HTMLDivElement>;
 
 const Tag = ({
   size = 'm',
