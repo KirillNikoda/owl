@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
     <div className={styles.wrapper}>
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
-      <div>{children}</div>
+      <div className={styles.body}>{children}</div>
       <Footer className={styles.footer} />
     </div>
   );
