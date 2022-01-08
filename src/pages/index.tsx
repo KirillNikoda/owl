@@ -16,7 +16,7 @@ export default function Home() {
         <Tag color='primary' size='m' href='https://google.com'>
           tag
         </Tag>
-        <Rating rating={2} />
+        <Rating rating={2} isEditable />
       </main>
 
       <footer className={styles.footer}>

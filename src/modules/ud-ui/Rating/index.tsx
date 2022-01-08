@@ -4,6 +4,7 @@ import React, {
   HTMLAttributes,
   useEffect,
   useState,
+  KeyboardEvent,
 } from 'react';
 
 import styles from './Rating.module.css';
@@ -17,7 +18,9 @@ type Props = {
 
 const Rating = ({
   rating,
-
+  isEditable,
+  onSetRating,
+  className,
   ...restProps
 }: Props) => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
@@ -26,23 +29,54 @@ const Rating = ({
 
   useEffect(() => {
     constructRating(rating);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rating]);
+
+  const changeDisplay = (i: number) => {
+    if (isEditable) {
+      constructRating(i);
+    }
+  };
+
+  const setRatingCreator = (i: number) => {
+    return () => {
+      if (isEditable && onSetRating) {
+        onSetRating(i);
+      }
+    };
+  };
+
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+    if (e.code === 'Space' && onSetRating) {
+      onSetRating(i);
+    }
+  };
 
   const constructRating = (currentRating: number) => {
     const updatedRatingArray = ratingArray.map((r, i) => (
-      <StarIcon
+      <span
+        key={i}
         className={classNames(styles.star, {
           [styles.filled]: i < currentRating,
+          [styles.editable]: isEditable,
         })}
-        key={i}
-      />
+        onMouseEnter={() => changeDisplay(i + 1)}
+        onMouseLeave={() => changeDisplay(rating)}
+        onClick={setRatingCreator(i + 1)}>
+        <StarIcon
+          tabIndex={isEditable ? 0 : -1}
+          onKeyDown={(e: KeyboardEvent<SVGElement>) =>
+            isEditable && handleSpace(i + 1, e)
+          }
+        />
+      </span>
     ));
 
     setRatingArray(updatedRatingArray);
   };
 
   return (
-    <div {...restProps}>
+    <div className={classNames(styles.starsContainer, className)} {...restProps}>
       {ratingArray.map((r, i) => (
         <span key={i}>{r}</span>
       ))}

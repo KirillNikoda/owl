@@ -1,7 +1,17 @@
+.starsContainer {
+	display: flex;
+	gap: 5px;
+}
+
 .star {
 
 }
 
-.filled {
+.filled svg {
 	fill: var(--primary);
+}
+
+.editable svg {
+	cursor: pointer;
+	transition: all 0.2s;
 }
