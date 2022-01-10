@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "_id": {
+        "secondCategory": "Аналитика"
+      },
+      "pages": [
+        {
+          "alias": "financial-analytics",
+          "title": "Курсы по финансовой аналитике",
+          "_id": "606568c56",
+          "category": "Финансовая аналитика"
+        },
+        {
+          "alias": "data-science",
+          "title": "Курсы по Data Science",
+          "_id": "606568343",
+          "category": "Data Science"
+        },
+        {
+          "alias": "machine-learning",
+          "title": "Курсы по машинному обучению",
+          "_id": "60653232",
+          "category": "Машинное обучение"
+        },
+        {
+          "alias": "big-data",
+          "title": "Курсы по Big Data",
+          "_id": "606568654",
+          "category": "Big Data"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "secondCategory": "Бизнес"
+      },
+      "pages": [
+        {
+          "alias": "financial-literacy",
+          "title": "Курсы по финансовой грамотности",
+          "_id": "606568c56321",
+          "category": "Финансовая грамотность"
+        },
+        {
+          "alias": "enterpreneurs",
+          "title": "Курсы предпринимательства",
+          "_id": "606568343",
+          "category": "Предпринимательство"
+        }
+      ]
+    }
+  ]
+}

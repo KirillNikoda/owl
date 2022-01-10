@@ -1,8 +1,11 @@
+import { MenuItem } from '@modules/core/domain/interfaces/common';
 import { withLayout } from '@modules/layout/Layout/withLayout';
 import { Rating, Tag } from '@modules/ud-ui';
+import axios from 'axios';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-const Home = () => {
+const Home = ({ menu }: HomePageProps) => {
   return (
     <div>
       <Head>
@@ -12,9 +15,11 @@ const Home = () => {
       </Head>
 
       <main>
-        <Tag color='primary' size='m' href='https://google.com'>
-          tag
-        </Tag>
+        {menu.pages.map(({ title, _id: id }) => (
+          <Tag key={id} color='primary' size='m'>
+            {title}
+          </Tag>
+        ))}
         <Rating rating={2} isEditable />
       </main>
     </div>
@@ -22,3 +27,19 @@ const Home = () => {
 };
 
 export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps = async () => {
+  const firstCategory = 0;
+  const { data: menu } = await axios.get(
+    `${process.env.NEXT_PUBLIC_DOMAIN}/categories`
+  );
+
+  return {
+    props: { menu: menu[0], firstCategory },
+  };
+};
+
+type HomePageProps = {
+  menu: MenuItem;
+  firstCategory: number;
+};

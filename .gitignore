@@ -8,6 +8,9 @@
 # vs code local settings
 .vscode
 
+# env
+*.env
+
 # testing
 /coverage
 
